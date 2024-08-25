@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+}
+
+.switch label {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    border-radius: 99px;
+    background: #f9f9f9;
+    outline: 3px solid #e8e8e8;
+    transition: ease 0.3s;
+}
+
+.switch label::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+    position: relative; /* kéo bóng đổ cao hơn outline */
+    transition: ease 0.3s;
+}
+
+.switch [type="checkbox"]:checked + label::before {
+    transform: translateX(30px);
+}
+
+.switch [type="checkbox"]:checked + label {
+    background: #72e460;
+    outline-color: #72e460;
+}
+
+.switch:has(:checked) {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+@keyframes example {
+    from {
+        background: #fff;
+    }
+    to {
+        background: #000;
+    }
+}
+
+.switch {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.desc-off,
+.desc-on {
+    margin-top: 7px;
+    color: #b7b6b6;
+    font-family: Montserrat;
+    font-weight: 700;
+}
+
+.switch [type="checkbox"]:checked ~ .desc-on {
+    display: block;
+    color: #72e640;
+}
+
+.switch [type="checkbox"]:checked ~ .desc-off {
+    display: none;
+}
