@@ -1,1 +1,1 @@
-# SwitchButton
+# SwitchButton - ON/OFF
