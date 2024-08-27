@@ -39,7 +39,7 @@ body {
     outline-color: #72e460;
 }
 
-.switch:has(:checked) {
+/* .switch:has(:checked) {
     animation-name: example;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -53,6 +53,9 @@ body {
     to {
         background: #000;
     }
+} */
+.switch:has(:checked) {
+    background: #000000;
 }
 
 .switch {
@@ -62,6 +65,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    transition: background 1.5s ease-in-out;
 }
 
 .desc-off,
